@@ -1,9 +1,9 @@
 SELECT Album_name, release_year  FROM Album_list
 WHERE release_year = 2018;
 
-select Trek_name, trek_length FROM Trek_list
+SELECT Trek_name, trek_length FROM Trek_list
 ORDER by trek_length DESC
-limit 1;
+LIMIT 1;
 
 SELECT Trek_name FROM Trek_list
 WHERE trek_length >= '3:30:00';
