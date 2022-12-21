@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS Music_genre_list (
 	genre_id SERIAL PRIMARY KEY,
-	genre_name VARCHAR(30) NOT NULL
+	genre_name VARCHAR(30) NOT NULL UNIQUE
 	);
 
 CREATE TABLE IF NOT EXISTS Musician_list (
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS Genre_musician (
 CREATE TABLE IF NOT EXISTS Album_list (
 	Album_id SERIAL PRIMARY KEY,
 	Album_name VARCHAR(50) NOT null,
-	release_year INTEGER NOT null
+	release_year INTEGER CHECK (release_year between 1900 and 2022) NOT null
 	);
 
 CREATE TABLE IF NOT EXISTS Musician_album (
@@ -30,13 +30,13 @@ CREATE TABLE IF NOT EXISTS Trek_list (
 	Trek_id SERIAL PRIMARY KEY,
 	Album_id INTEGER NOT NULL REFERENCES Album_list (Album_id),
 	Trek_name VARCHAR(50) NOT null,
-	trek_length TIME NOT null
+	trek_length TIME CHECK (trek_length between 00:00:01 and 01:00:00) NOT null
 	);
 
 CREATE TABLE IF NOT EXISTS Collection (
 	Collection_id SERIAL PRIMARY KEY,
 	Collection_name VARCHAR(50) NOT null,
-	release_year INTEGER NOT null
+	release_year INTEGER CHECK (release_year between 1900 and 2022) NOT null
 	);
 
 CREATE TABLE IF NOT EXISTS Collection_trek (
