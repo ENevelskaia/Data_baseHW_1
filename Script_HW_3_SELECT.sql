@@ -6,7 +6,7 @@ ORDER by trek_length DESC
 LIMIT 1;
 
 SELECT Trek_name FROM Trek_list
-WHERE trek_length >= '3:30:00';
+WHERE trek_length >= '00:03:30';
 
 SELECT Collection_name FROM Collection
 WHERE release_year BETWEEN 2018 AND 2020;
